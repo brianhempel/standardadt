@@ -31,7 +31,7 @@ Primitives are:
 | `CharUTF8`                                                 | A single UTF-8 character.                                    |
 | `List a`                                                   | A list containing elements of some type `a`.                 |
 | `StringUTF8`                                               | $\equiv$ `List CharUTF8`                                     |
-| `Optional a = Some { element: a } | None`                  | Optionally contains a value of some type `a`, or no value. In other words, this field may be `null`. |
+| <code>Optional a = Some { element: a } &#124; None</code>                  | Optionally contains a value of some type `a`, or no value. In other words, this field may be `null`. |
 
 Refinements:
 
