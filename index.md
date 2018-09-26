@@ -20,15 +20,15 @@ The explicit schemas of Standard ADT are:
 
 Primitives are:
 
-| Primitive                                       | Description                                                  |
-| ----------------------------------------------- | ------------------------------------------------------------ |
-| `Int`                                           | Arbitrary precision integer.                                 |
-| `IntN` `UIntN` e.g. `Int32` `UInt64`            | Signed/unsigned integers of various power-of-two sizes. Equivalent to `Int` with a refinement of $-2^{N-1} \le n < 2^{N-1}$ for signed and $0 \le n < 2^N$ for unsigned integers. |
-| `Rational { numerator: Int, denominator: Int }` | Arbitrary precision rational number. (Useful for arbitrary precision decimals.) |
-| `Float32` `Float64`                             | IEEE 32-bit and 64-bit floating point numbers.               |
-| `CharUTF8`                                      | A single UTF-8 character.                                    |
-| `List a`                                        | A list containing elements of some type `a`.                 |
-| `StringUTF8`                                    | $\equiv$ `List CharUTF8`                                     |
+| Primitive                                                  | Description                                                  |
+| ---------------------------------------------------------- | ------------------------------------------------------------ |
+| `Int`                                                      | Arbitrary precision integer.                                 |
+| `IntN` `UIntN` e.g. `Int32` `UInt64`                       | Signed/unsigned integers of various power-of-two sizes. Equivalent to `Int` with a refinement of $-2^{N-1} \le n < 2^{N-1}$ for signed and $0 \le n < 2^N$ for unsigned integers. |
+| `Rational = Rational { numerator: Int, denominator: Int }` | Arbitrary precision rational number. (Useful for arbitrary precision decimals.) |
+| `Float32` `Float64`                                        | IEEE 32-bit and 64-bit floating point numbers.               |
+| `CharUTF8`                                                 | A single UTF-8 character.                                    |
+| `List a`                                                   | A list containing elements of some type `a`.                 |
+| `StringUTF8`                                               | $\equiv$ `List CharUTF8`                                     |
 
 Refinements:
 
