@@ -16,6 +16,8 @@ Standard ADT schemas are:
 2. **Enforceable.** An API that publishes a standard ADT schema can and should verify that all its responses match the schema. You can trust the API will do what it says and will not break your code.
 3. **Readable.** Standard ADT schemas can be read by humans or computers. You can understand the data and appropriate classes or data types in your language of choice can be automatically generated from an ADT schema, as can the code to transform Standard ADT responses into objects in your language.
 
+A standard ADT response always contains the schema _and_ the data. So you, and you computer, can interpret what you have received.
+
 ## Schema
 
 Primitives are:
