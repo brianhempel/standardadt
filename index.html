@@ -8,13 +8,13 @@
 
 <h1 id="standardalgebraicdatatypes">Standard Algebraic Data Types</h1>
 
-<p>Algebraic data types let you express not only your data, but also its shape and its variations.</p>
+<p>Algebraic data types let you express not only your data, but also its shape and its variants.</p>
 
-<p>Real world data, has a shape, also called a <em>schema</em>.</p>
+<p>Real world data typically has a shape, too, often called a <em>schema</em>.</p>
 
-<p>A JSON file is data-only. Humans learn by example, so you can <em>usually</em> guess the schema by looking at a JSON object. But what if there are other possible variations? You have to go to the docs to learn about variations and details. But even then, the documentation may be incomplete or ambiguous, and computers can&#8217;t read documentation so there&#8217;s no guarantee that the actual API follows the documentation.</p>
+<p>However, most popular formats are <em>data-only</em>. For example, when working with JSON, humans can <em>usually</em> guess the schema by looking at a few example JSON objects. But what if there are other possible variations not illustrated by the examples? You have to go to the docs to learn about variations and details. But even then, the documentation may be incomplete or ambiguous, and computers can&#8217;t read documentation so there&#8217;s no guarantee that the actual API follows the documentation.</p>
 
-<p>Standard ADT schemas are:</p>
+<p>Instead, Standard ADT schemas are:</p>
 
 <ol>
 <li><strong>Unambiguous.</strong> ADTs express variants. Will this field be ever be <code>null</code>? ADTs tell you. Perhaps the API lists both registered users and anonymous users in the same response—what fields are available on each kind? ADTs make it clear.</li>
