@@ -4,15 +4,15 @@ Title: Standard Algebraic Data Types
 
 # Standard Algebraic Data Types
 
-Algebraic data types let you express not only your data, but also its shape and its variations.
+Algebraic data types let you express not only your data, but also its shape and its variants.
 
-Real world data, has a shape, also called a _schema_.
+Real world data typically has a shape, too, often called a _schema_.
 
-A JSON file is data-only. Humans learn by example, so you can _usually_ guess the schema by looking at a JSON object. But what if there are other possible variations? You have to go to the docs to learn about variations and details. But even then, the documentation may be incomplete or ambiguous, and computers can't read documentation so there's no guarantee that the actual API follows the documentation.
+However, most popular formats are *data-only*. For example, when working with JSON, humans can *usually* guess the schema by looking at a few example JSON objects. But what if there are other possible variations not illustrated by the examples? You have to go to the docs to learn about variations and details. But even then, the documentation may be incomplete or ambiguous, and computers can't read documentation so there's no guarantee that the actual API follows the documentation.
 
-Standard ADT schemas are:
+Instead, Standard ADT schemas are:
 
-1. **Unambiguous.** ADTs express variants. Will this field be ever be `null`? ADTs tell you. Perhaps the API  lists both registered users and anonymous users in the same response—what fields are available on each kind?  ADTs make it clear.
+1. **Unambiguous.** ADTs express variants. Will this field be ever be `null`? ADTs tell you. Perhaps the API lists both registered users and anonymous users in the same response—what fields are available on each kind?  ADTs make it clear.
 2. **Enforceable.** An API that publishes a standard ADT schema can and should verify that all its responses match the schema. You can trust the API will do what it says and will not break your code.
 3. **Readable.** Standard ADT schemas can be read by humans or computers. You can understand the data and appropriate classes or data types in your language of choice can be automatically generated from an ADT schema, as can the code to transform Standard ADT responses into objects in your language.
 
