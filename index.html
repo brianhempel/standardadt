@@ -10,6 +10,73 @@
 
 <p>Algebraic data types let you express not only your data, but also its shape and its variations.</p>
 
+<p>Real world data, has a shape, also called a <em>schema</em>.</p>
+
+<p>A JSON file is data-only. Humans learn by example, so you can <em>usually</em> guess the schema by looking at a JSON object. But what if there are other possible variations? You have to go to the docs to learn about variations and details. But even then, the documentation may be incomplete or ambiguous, and computers can&#8217;t read documentation so there&#8217;s no guarantee that the actual API follows the documentation.</p>
+
+<p>The explicit schemas of Standard ADT are:</p>
+
+<ol>
+<li><strong>Unambiguous.</strong> ADTs express variants. Will this field be ever be <code>null</code>? ADTs tell you. Perhaps the API lists both registered users and anonymous users in the same response—what fields are available on each kind? ADTs make it clear.</li>
+<li><strong>Machine-enforcable.</strong> An API that publishes a standard ADT schema can and should verify that all its responses match the schema. You can trust the API will do what it says and will not break your code.</li>
+<li><strong>Machine-readable.</strong> Appropriate classes or data types in your language of choice can be automatically generated from an ADT schema, as can the code to transform Standard ADT responses into objects in your language.</li>
+</ol>
+
+<h2 id="schema">Schema</h2>
+
+<p>Primitives are:</p>
+
+<table>
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th> Primitive             </th>
+	<th> Description             </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> <code>Int</code>              </td>
+	<td> Arbitrary precision integer.         </td>
+</tr>
+<tr>
+	<td> <code>Int8</code> <code>Int16</code> <code>Int32</code> <code>Int64</code> <code>Int128</code> <code>UInt8</code> <code>UInt16</code> <code>UInt32</code> <code>UInt64</code> <code>UInt128</code> </td>
+	<td> Signed/unsigned integers of various sizes.     </td>
+</tr>
+<tr>
+	<td> <code>Rational { numerator: Int, denominator: Int }</code>    </td>
+	<td> Arbitrary precision rational number. (Useful for arbitrary precision decimals.) </td>
+</tr>
+<tr>
+	<td> <code>Float32</code> <code>Float64</code>           </td>
+	<td> IEEE 32-bit and 64-bit floating point numbers.    </td>
+</tr>
+<tr>
+	<td> <code>CharUTF8</code>             </td>
+	<td> A single UTF-8 character.         </td>
+</tr>
+<tr>
+	<td> <code>List a</code>              </td>
+	<td> A list containing elements of some type <code>a</code>.     </td>
+</tr>
+<tr>
+	<td> <code>StringUTF8</code>             </td>
+	<td> <span class="math">\(\equiv\)</span> <code>List CharUTF8</code>          </td>
+</tr>
+</tbody>
+</table>
+
+<p>Refinements:</p>
+
+<h2 id="data">Data</h2>
+
+<p>Data looks like</p>
+
 </body>
 </html>
 
