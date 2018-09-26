@@ -34,38 +34,38 @@
 
 <thead>
 <tr>
-	<th> Primitive             </th>
+	<th> Primitive          </th>
 	<th> Description             </th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-	<td> <code>Int</code>              </td>
+	<td> <code>Int</code>           </td>
 	<td> Arbitrary precision integer.         </td>
 </tr>
 <tr>
-	<td> <code>Int8</code> <code>Int16</code> <code>Int32</code> <code>Int64</code> <code>Int128</code> <code>UInt8</code> <code>UInt16</code> <code>UInt32</code> <code>UInt64</code> <code>UInt128</code> </td>
-	<td> Signed/unsigned integers of various sizes.     </td>
+	<td> <code>IntN</code> <code>UIntN</code> e.g. <code>Int32</code> <code>UInt64</code>   </td>
+	<td> Signed/unsigned integers of various power-of-two sizes. Equivalent to <code>Int</code> with a refinement of <span class="math">\(-2^{N-1} \le n &lt; 2^{N-1}\)</span> for signed and <span class="math">\(0 \le n &lt; 2^N\)</span> for unsigned integers. </td>
 </tr>
 <tr>
-	<td> <code>Rational { numerator: Int, denominator: Int }</code>    </td>
+	<td> <code>Rational { numerator: Int, denominator: Int }</code> </td>
 	<td> Arbitrary precision rational number. (Useful for arbitrary precision decimals.) </td>
 </tr>
 <tr>
-	<td> <code>Float32</code> <code>Float64</code>           </td>
+	<td> <code>Float32</code> <code>Float64</code>        </td>
 	<td> IEEE 32-bit and 64-bit floating point numbers.    </td>
 </tr>
 <tr>
-	<td> <code>CharUTF8</code>             </td>
+	<td> <code>CharUTF8</code>          </td>
 	<td> A single UTF-8 character.         </td>
 </tr>
 <tr>
-	<td> <code>List a</code>              </td>
+	<td> <code>List a</code>          </td>
 	<td> A list containing elements of some type <code>a</code>.     </td>
 </tr>
 <tr>
-	<td> <code>StringUTF8</code>             </td>
+	<td> <code>StringUTF8</code>         </td>
 	<td> <span class="math">\(\equiv\)</span> <code>List CharUTF8</code>          </td>
 </tr>
 </tbody>
