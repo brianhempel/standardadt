@@ -1,4 +1,6 @@
+---
 Title: Standard Algebraic Data Types
+---
 
 # Standard Algebraic Data Types
 
