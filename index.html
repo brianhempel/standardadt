@@ -50,11 +50,11 @@
 </tr>
 <tr>
 	<td> <code>Rational = Rational { numerator: Int, denominator: Int }</code> </td>
-	<td> Arbitrary precision rational number. (Useful for arbitrary precision decimals.) </td>
+	<td> Arbitrary precision rational number.       </td>
 </tr>
 <tr>
-	<td> <code>Float32</code> <code>Float64</code>          </td>
-	<td> IEEE 32-bit and 64-bit floating point numbers.    </td>
+	<td> <code>Float32</code> <code>Float64</code> <code>Float128</code>        </td>
+	<td> IEEE floating point numbers of various sizes.    </td>
 </tr>
 <tr>
 	<td> <code>CharUTF8</code>             </td>
@@ -67,6 +67,11 @@
 <tr>
 	<td> <code>StringUTF8</code>            </td>
 	<td> <span class="math">\(\equiv\)</span> <code>List CharUTF8</code>          </td>
+</tr>
+<tr>
+	<td> `Optional a = Some a </td>
+	<td> None`        </td>
+	<td> Optionally contains a value of some type <code>a</code>, or no value. In other words, this field may be <code>null</code>. </td>
 </tr>
 </tbody>
 </table>
