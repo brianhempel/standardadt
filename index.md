@@ -20,20 +20,68 @@ A standard ADT response always contains the schema _and_ the data. So you, and y
 
 ## Schema
 
-Primitives are:
+Basic types are:
 
-| Primitive                                                  | Description                                                  |
-| ---------------------------------------------------------- | ------------------------------------------------------------ |
-| `Int`                                                      | Arbitrary precision integer.                                 |
-| `IntN` `UIntN` e.g. `Int32` `UInt64`                       | Signed/unsigned integers of various power-of-two sizes. Equivalent to `Int` with a refinement of $-2^{N-1} \le n < 2^{N-1}$ for signed and $0 \le n < 2^N$ for unsigned integers. |
-| `Rational = Rational { numerator: Int, denominator: Int }` | Arbitrary precision rational number.                         |
-| `Float32` `Float64` `Float128`                             | IEEE floating point numbers of various sizes.                |
-| `CharUTF8`                                                 | A single UTF-8 character.                                    |
-| `List a`                                                   | A list containing elements of some type `a`.                 |
-| `StringUTF8`                                               | $\equiv$ `List CharUTF8`                                     |
-| <code>Optional a = Some { element: a } &#124; None</code>                  | Optionally contains a value of some type `a`, or no value. In other words, this field may be `null`. |
+| Type                                                         | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `int`                                                        | Arbitrary precision integer.                                 |
+| `intN` `uIntN` e.g. `int32` `uInt64`                         | Signed/unsigned integers of various power-of-two sizes. Equivalent to `int` with a refinement of $-2^{N-1} \le n < 2^{N-1}$ for signed and $0 \le n < 2^N$ for unsigned integers. |
+| `rational = Rational { numerator : Int, denominator : Int }` | Arbitrary precision rational number.                         |
+| `float32` `float64` `float128`                               | IEEE floating point numbers of various sizes.                |
+| `bool = True | False`                                        | Booleans, `True` or `False`.                                 |
+| `charUTF8`                                                   | A single UTF-8 character.                                    |
+| `list<a>`                                                    | A list containing elements of some type `a`.                 |
+| `stringUTF8`                                                 | $\equiv$ `list<charUTF8>`                                    |
+| <code>optional<a> = Some { element : a } &#124; None</code>  | Optionally contains a value of some type `a`, or no value. In other words, this field may be `null`. |
 
 Refinements:
+
+### Example
+
+The Standard ADT schema, expressed in Standard ADT:
+
+```elm
+baseType = Int -- Sizes specified by refinements.
+         | Rational
+         | Float32 | Float64 | Float128
+         | CharUTF8
+
+refinement = Variable typeName
+           | And refinement refinement
+           | Or refinement refinement
+           | Bool bool
+           | Application
+           | Function
+
+type = Alias typeName
+     | BaseType baseType
+     | ForAll list<typeName> type
+     | Application type list<type>
+     | Record list<recordField>
+     | Variants list<variant>
+     | Refined type list<refinement>
+
+recordField = { name : typeName
+              , type : type }
+
+variant = { name               : variantName
+          , args               : list<recordField>
+          , optionalRefinement : optional<refinement> }
+
+typeName    = { string : stringUTF8 | string =~ /\A[a-z][A-Za-z0-9_]*\z/ }
+varName     = { string : stringUTF8 | string =~ /\A[a-z][A-Za-z0-9_]*\z/ }
+variantName = { string : stringUTF8 | string =~ /\A[A-Z][A-Za-z0-9_]*\z/ }
+
+typeDefinition = TypeDefinition { name : typeName, type : type }
+
+schemaRoot = SchemaRoot { definitions : list<typeDefinition>, objectType : typeName }
+
+schemaRoot
+```
+
+
+
+
 
 ## Data
 
