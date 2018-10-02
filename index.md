@@ -28,7 +28,7 @@ Basic types are:
 | `intN` `uIntN` e.g. `int32` `uInt64`                         | Signed/unsigned integers of various power-of-two sizes. Equivalent to `int` with a refinement of $-2^{N-1} \le n < 2^{N-1}$ for signed and $0 \le n < 2^N$ for unsigned integers. |
 | `rational = Rational { numerator : Int, denominator : Int }` | Arbitrary precision rational number.                         |
 | `float32` `float64` `float128`                               | IEEE floating point numbers of various sizes.                |
-| `bool = True | False`                                        | Booleans, `True` or `False`.                                 |
+| `bool = True &#124; False`                                   | Booleans, `True` or `False`.                                 |
 | `charUTF8`                                                   | A single UTF-8 character.                                    |
 | `list<a>`                                                    | A list containing elements of some type `a`.                 |
 | `stringUTF8`                                                 | $\equiv$ `list<charUTF8>`                                    |
